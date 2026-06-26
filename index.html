@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>腾讯云 ADP · 智能体开发平台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230052D9'/%3E%3Ctext x='12' y='17' font-size='13' font-family='Arial' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./assets/css/main.css?v=tabbar-20260626d" />
+  <link rel="stylesheet" href="./assets/css/mode-fix.css?v=tabbar-20260626d" />
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <!-- 官方 Logo 图片：把图片放到 assets/images/logo.png 即可 -->
+      <a class="brand" href="#home" data-nav="home" aria-label="腾讯云 ADP">
+        <img class="brand-logo" src="./assets/images/Tencentcloudlogo.png?v=poster-20260612o" alt="腾讯云"
+             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('span'),{className:'brand-fallback',textContent:'腾讯云'}))" />
+      </a>
+
+      <!-- 主导航：3 大板块（居右） -->
+      <nav class="topnav" id="topnav">
+        <a class="topnav-item active" data-nav="home">主页</a>
+        <a class="topnav-item" data-nav="cases">案例介绍</a>
+        <a class="topnav-item" data-nav="industries">行业解决方案</a>
+      </nav>
+
+      <button class="btn-icon" id="menuToggle" aria-label="菜单">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- 主体：根据 section 切换 -->
+  <main class="main">
+
+    <!-- ============ 主页 ============ -->
+    <section class="page page-home active" id="page-home">
+      <div class="poster-hero">
+        <div class="poster-collage" aria-hidden="true">
+          <div class="media-card media-a"><img src="./assets/images/gen/Clean_enterprise_SaaS_product__2026-06-15T03-25-08.png?v=ui-20260615" alt="知识推理·可信问答界面" /></div>
+          <div class="media-card media-b"><img src="./assets/images/gen/Clean_enterprise_SaaS_product__2026-06-15T03-25-10.png?v=ui-20260615" alt="流程编排·工作流画布" /></div>
+          <div class="media-card media-c"><img src="./assets/images/gen/Clean_enterprise_SaaS_product__2026-06-15T03-25-43.png?v=ui-20260615" alt="内容生成·报告交付界面" /></div>
+          <div class="media-card media-d"><img src="./assets/images/gen/Clean_enterprise_SaaS_product__2026-06-15T03-25-14.png?v=ui-20260615" alt="安全治理·评测看板" /></div>
+          <div class="media-card media-e"><span>知识库</span><small>可信问答</small></div>
+          <div class="media-card media-f"><span>流程</span><small>工具编排</small></div>
+          <div class="media-card media-g"><span>交付物</span><small>自动生成</small></div>
+          <div class="canvas-sheet">
+            <div class="sheet-bar"><i></i><i></i><i></i></div>
+            <div class="sheet-prompt">帮我把客户需求变成一份可评审方案，并生成执行流程</div>
+            <div class="sheet-flow"><span>规划</span><span>检索</span><span>生成</span><span>评审</span></div>
+          </div>
+        </div>
+
+        <div class="poster-title-block">
+          <div class="hero-brand" id="heroBrand" aria-label="腾讯云 ADP">
+            <img class="hero-brand-img" src="./assets/images/logo.png?v=poster-20260612o" alt="腾讯云 ADP"
+                 onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('span'),{className:'hero-brand-text',innerHTML:'腾讯云<b>ADP</b>'}))" />
+          </div>
+          <h1 class="hero-title"><span id="heroHeadline">用一句话驱动企业智能体</span></h1>
+          <p class="hero-desc" id="heroDesc"></p>
+          <div class="hero-cta" id="heroCta">
+            <a class="hero-cta-primary" href="https://adp.tencentcloud.com/adp#/">免费开始使用</a>
+            <a class="hero-cta-secondary" href="https://adp.tencentcloud.com/zh">联系销售团队</a>
+          </div>
+        </div>
+      </div>
+
+      <section class="hero-demo-panel" aria-label="试用 ADP 智能体">
+        <div class="adp-try" id="adpTry">
+          <div class="adp-try-head">
+            <span class="adp-try-tag">TRY ADP</span>
+            <b>选一个真实场景，看 ADP 如何把一句话拆成多步执行</b>
+            <small>这些任务单靠一个大模型对话无法完成——需要检索企业知识库、调用业务系统、按规则编排流程并产出交付物。</small>
+          </div>
+          <div class="adp-try-body">
+            <div class="adp-try-scenes" role="tablist" aria-label="选择场景" id="adpTryScenes"></div>
+            <div class="adp-try-trace" id="adpTryTrace" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 客户 Logo 墙（JS 渲染，置于 TRY ADP 之下、行业场景画册之上） -->
+      <div class="logo-wall logo-wall-home" id="homeLogos"></div>
+
+      <section class="industry-accordion" aria-label="行业场景画册">
+        <div class="ia-head">
+          <span>行业场景画册</span>
+          <h2>这些业务场景，可以直接搭建成智能体</h2>
+          <p>覆盖金融、客服、制造、能源、零售等典型业务场景。展开任意一张卡片，即可看到 ADP 如何把知识、工具与流程编排成可直接落地的行业智能体。</p>
+        </div>
+
+        <div class="ia-row" role="tablist" aria-label="行业场景">
+          <article class="ia-card is-active" role="tab" aria-selected="true" tabindex="0" data-ind="finance"
+                   style="--ia-bg:url('../images/gen/Clean_modern_3D_isometric_illu_2026-06-15T03-38-41.png')">
+            <div class="ia-title"><b>金融风控与投顾</b></div>
+            <h3 class="ia-headline">金融风控与投顾</h3>
+            <span class="ia-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 3 2 8v2h20V8L12 3ZM4 11v7H3v2h18v-2h-1v-7h-2v7h-3v-7h-2v7h-2v-7H9v7H6v-7H4Z"/></svg></span>
+            <button class="ia-go" type="button" aria-label="查看详情"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="ia-detail">
+              <ul class="ia-points">
+                <li>合规问答、客户画像与智能风控，覆盖信贷、投顾、反欺诈全流程</li>
+                <li>接入企业知识库，回答保留来源依据，满足审计与合规要求</li>
+              </ul>
+              <div class="ia-block">
+                <label>客户案例</label>
+                <div class="ia-chips ia-cases"><span>某股份制银行</span><span>头部券商</span><span>保险集团</span></div>
+              </div>
+              <div class="ia-block">
+                <label>推荐产品</label>
+                <div class="ia-chips ia-products"><span>知识引擎</span><span>工作流编排</span><span>风控智能体</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="ia-card" role="tab" aria-selected="false" tabindex="0" data-ind="telecom"
+                   style="--ia-bg:url('../images/gen/Clean_modern_3D_isometric_illu_2026-06-15T03-38-53.png')">
+            <div class="ia-title"><b>服务与客服运营</b></div>
+            <h3 class="ia-headline">服务与客服运营</h3>
+            <span class="ia-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M5 3h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H10l-5 4v-4a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/></svg></span>
+            <button class="ia-go" type="button" aria-label="查看详情"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="ia-detail">
+              <ul class="ia-points">
+                <li>工单自动摘要、风险预警与多轮知识问答，显著缩短平均处理时长</li>
+                <li>沉淀服务话术与处置流程，新人也能快速上手</li>
+              </ul>
+              <div class="ia-block">
+                <label>客户案例</label>
+                <div class="ia-chips ia-cases"><span>头部运营商</span><span>电商平台</span><span>SaaS 厂商</span></div>
+              </div>
+              <div class="ia-block">
+                <label>推荐产品</label>
+                <div class="ia-chips ia-products"><span>客服智能体</span><span>工单助手</span><span>知识库</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="ia-card" role="tab" aria-selected="false" tabindex="0" data-ind="manufacturing"
+                   style="--ia-bg:url('../images/gen/Clean_modern_3D_isometric_illu_2026-06-15T03-38-56.png')">
+            <div class="ia-title"><b>制造与设备运维</b></div>
+            <h3 class="ia-headline">制造与设备运维</h3>
+            <span class="ia-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65c-.03-.24-.24-.42-.49-.42h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg></span>
+            <button class="ia-go" type="button" aria-label="查看详情"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="ia-detail">
+              <ul class="ia-points">
+                <li>工艺知识问答、质检图像识别与异常处置流程一体化</li>
+                <li>把老师傅的经验沉淀为可复用技能模板</li>
+              </ul>
+              <div class="ia-block">
+                <label>客户案例</label>
+                <div class="ia-chips ia-cases"><span>汽车整车厂</span><span>电子制造</span><span>装备企业</span></div>
+              </div>
+              <div class="ia-block">
+                <label>推荐产品</label>
+                <div class="ia-chips ia-products"><span>质检智能体</span><span>工艺助手</span><span>流程编排</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="ia-card" role="tab" aria-selected="false" tabindex="0" data-ind="energy"
+                   style="--ia-bg:url('../images/gen/Clean_modern_3D_isometric_illu_2026-06-15T03-38-55.png')">
+            <div class="ia-title"><b>能源巡检与安全</b></div>
+            <h3 class="ia-headline">能源巡检与安全</h3>
+            <span class="ia-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></span>
+            <button class="ia-go" type="button" aria-label="查看详情"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="ia-detail">
+              <ul class="ia-points">
+                <li>现场图像识别、合规校验与审计追踪，降低人工巡检成本</li>
+                <li>关键节点支持人工确认，全过程可追溯</li>
+              </ul>
+              <div class="ia-block">
+                <label>客户案例</label>
+                <div class="ia-chips ia-cases"><span>电网公司</span><span>油气集团</span><span>新能源企业</span></div>
+              </div>
+              <div class="ia-block">
+                <label>推荐产品</label>
+                <div class="ia-chips ia-products"><span>巡检智能体</span><span>安全研判</span><span>审计追踪</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="ia-card" role="tab" aria-selected="false" tabindex="0" data-ind="retail"
+                   style="--ia-bg:url('../images/gen/Clean_modern_3D_isometric_illu_2026-06-15T03-39-11.png')">
+            <div class="ia-title"><b>零售经营与导购</b></div>
+            <h3 class="ia-headline">零售经营与导购</h3>
+            <span class="ia-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 8a5 5 0 0 1 10 0h3l.9 12.1A2 2 0 0 1 18.9 22H5.1a2 2 0 0 1-2-1.9L4 8h3Zm2 0h6a3 3 0 0 0-6 0Z"/></svg></span>
+            <button class="ia-go" type="button" aria-label="查看详情"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="ia-detail">
+              <ul class="ia-points">
+                <li>经营问数、营销内容生成与私域转化全链路提效</li>
+                <li>一句话生成报表与导购话术，业务人员可自助使用</li>
+              </ul>
+              <div class="ia-block">
+                <label>客户案例</label>
+                <div class="ia-chips ia-cases"><span>连锁零售</span><span>美妆品牌</span><span>商超集团</span></div>
+              </div>
+              <div class="ia-block">
+                <label>推荐产品</label>
+                <div class="ia-chips ia-products"><span>经营问数</span><span>内容工厂</span><span>导购智能体</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="mode-showcase" data-active="standard" aria-label="应用模式演示">
+        <h2 class="mode-showcase-title">三种智能体应用模式<br/>覆盖从问答到协作执行</h2>
+        <div class="mode-showcase-body">
+          <div class="mode-copy-list">
+            <article class="mode-copy mode-copy-standard active" data-mode="standard" role="button" tabindex="0">
+              <h3>标准模式</h3>
+              <p>由模型自主判断使用者问题应执行工作流程，或执行基于高质量知识检索的问答，是产品内建最佳应用模式。</p>
+            </article>
+            <article class="mode-copy mode-copy-workflow" data-mode="workflow" role="button" tabindex="0">
+              <h3>单工作流模式</h3>
+              <p>使用指定的工作流程来回应所有请求，适用于有唯一且明确的业务流程的企业场景，支持异步呼叫工作流程。</p>
+            </article>
+            <article class="mode-copy mode-copy-multi" data-mode="multi" role="button" tabindex="0">
+              <h3>多智能体模式</h3>
+              <p>根据自然语言指令，由大模型自主规划来规划任务。回复更灵活，广泛适用于生活咨询、百科知识等场景。</p>
+            </article>
+          </div>
+          <div class="mode-stage">
+            <div class="mode-scene scene-standard active" data-mode="standard">
+              <div class="scene-card standard-logic">
+                <div class="scene-title">标准模式：模型自主判断</div>
+                <svg class="mode-svg standard-svg" viewBox="0 0 640 240" role="img" aria-label="标准模式自动分流示意">
+                  <defs>
+                    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#8EA8D8"/></marker>
+                  </defs>
+                  <rect x="28" y="98" width="112" height="46" rx="2" fill="#fff" stroke="#4C6FFF"/>
+                  <text x="84" y="126" text-anchor="middle" font-size="14" fill="#26324A">用户问题</text>
+                  <rect x="230" y="98" width="126" height="46" rx="2" fill="#F7FAFF" stroke="#4C6FFF"/>
+                  <text x="293" y="126" text-anchor="middle" font-size="14" fill="#26324A">模型自主判断</text>
+                  <rect x="478" y="42" width="132" height="58" rx="2" fill="#fff" stroke="#C9D7F0"/>
+                  <text x="544" y="67" text-anchor="middle" font-size="13" fill="#26324A">知识问答</text>
+                  <text x="544" y="86" text-anchor="middle" font-size="11" fill="#6F7785">检索规则 / 常见问答</text>
+                  <rect x="478" y="142" width="132" height="58" rx="2" fill="#fff" stroke="#C9D7F0"/>
+                  <text x="544" y="167" text-anchor="middle" font-size="13" fill="#26324A">流程执行</text>
+                  <text x="544" y="186" text-anchor="middle" font-size="11" fill="#6F7785">查订单 / 建工单</text>
+                  <path id="stdMain" d="M140 121 L230 121" stroke="#4C6FFF" stroke-width="2" fill="none" marker-end="url(#arrowBlue)"/>
+                  <path id="stdRag" d="M356 121 C410 121 420 71 478 71" stroke="#8EA8D8" stroke-width="2" fill="none" marker-end="url(#arrowBlue)"/>
+                  <path id="stdFlow" d="M356 121 C410 121 420 171 478 171" stroke="#8EA8D8" stroke-width="2" fill="none" marker-end="url(#arrowBlue)"/>
+                  <circle r="6" fill="#4C6FFF"><animateMotion dur="2.4s" repeatCount="indefinite" path="M140 121 L230 121"/></circle>
+                  <circle r="5" fill="#4C6FFF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" dur="2.4s" repeatCount="indefinite"/><animateMotion dur="2.4s" repeatCount="indefinite" path="M356 121 C410 121 420 71 478 71"/></circle>
+                  <circle r="5" fill="#4C6FFF" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" dur="2.4s" begin=".3s" repeatCount="indefinite"/><animateMotion dur="2.4s" begin=".3s" repeatCount="indefinite" path="M356 121 C410 121 420 171 478 171"/></circle>
+                </svg>
+                <div class="scene-caption">同一个问题进入后，平台自动判断该走知识问答还是业务流程。</div>
+              </div>
+            </div>
+            <div class="mode-scene scene-workflow" data-mode="workflow">
+              <div class="scene-card workflow-logic">
+                <div class="scene-title">单工作流模式：固定流程推进</div>
+                <div class="workflow-steps-static" aria-label="单工作流模式固定流程示意">
+                  <div class="flow-step step-1">提交申请</div>
+                  <span class="flow-link"></span>
+                  <div class="flow-step step-2">补全信息</div>
+                  <span class="flow-link"></span>
+                  <div class="flow-step step-3">系统校验</div>
+                  <span class="flow-link"></span>
+                  <div class="flow-step step-4">输出结果</div>
+                </div>
+                <div class="workflow-dialog compact">
+                  <p>用户：我想申请一个合同审批流程。</p>
+                  <p>智能体：请补充合同编号与审批负责人。</p>
+                  <p>用户：HT-2026-0609 / 张三。</p>
+                </div>
+              </div>
+            </div>
+            <div class="mode-scene scene-multi" data-mode="multi">
+              <div class="scene-card multi-logic">
+                <div class="scene-title">多智能体模式：并行协作汇总</div>
+                <div class="multi-question">用户：帮我分析客户续费风险，并给出跟进方案。</div>
+                <div class="multi-board">
+                  <div class="agent-talk a1"><b>画像智能体</b><span>发现近 30 天活跃度下降</span></div>
+                  <div class="agent-talk a2"><b>风险智能体</b><span>续费风险：高，原因是工单积压</span></div>
+                  <div class="agent-talk a3"><b>建议智能体</b><span>建议客户经理 24 小时内跟进</span></div>
+                </div>
+                <div class="multi-result">汇总建议：优先处理未解决工单，提供续费优惠，并安排客户成功回访。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="section-head">
+        <h2 class="section-title">行业模板</h2>
+      </div>
+      <div class="industry-grid" id="industryGrid"></div>
+
+      <section class="home-cta" aria-label="开始搭建">
+        <div class="home-cta-brand"><img src="./assets/images/white-logo.png" alt="腾讯云 ADP" /></div>
+        <h2>准备开始搭建你的第一个企业智能体？</h2>
+        <p>从模板开始，把知识、工具、流程和模型编排成可交付的企业级智能体。</p>
+        <div class="home-cta-actions">
+          <a class="home-cta-primary" href="https://adp.tencentcloud.com/adp#/">立即开始</a>
+          <a class="home-cta-secondary" href="https://adp.tencentcloud.com/zh">文档</a>
+        </div>
+      </section>
+    </section>
+
+    <!-- ============ 案例介绍 ============ -->
+    <section class="page page-cases" id="page-cases">
+      <!-- 案例列表（顶部 Banner + 卡片） -->
+      <div class="page-head" id="casesHead">
+        <div class="page-head-tag">案例样板间</div>
+        <h1 class="page-head-title">案例介绍</h1>
+        <p class="page-head-desc">腾讯云 ADP 把知识检索、工具调用、流程编排与多模型推理等核心能力，与服务、运维、数据、工程、治理等真实业务场景深度融合——每个场景都能快速长出一个可评审、可上线、可追踪的企业级智能体。</p>
+      </div>
+
+      <div class="filter-bar" id="caseFilter">
+        <span class="filter-label">分类筛选：</span>
+        <button class="chip active" data-cat="all">全部</button>
+        <!-- JS 渲染 categories -->
+      </div>
+
+      <div class="grid-cards" id="caseCards"></div>
+
+      <!-- 案例详情页（点击卡片显示） -->
+      <div class="case-detail hidden" id="caseDetail"></div>
+
+      <section class="home-cta page-bottom-cta" aria-label="开始搭建">
+        <div class="home-cta-brand"><img src="./assets/images/white-logo.png" alt="腾讯云 ADP" /></div>
+        <h2>准备开始搭建你的第一个企业智能体？</h2>
+        <p>从模板开始，把知识、工具、流程和模型编排成可交付的企业级智能体。</p>
+        <div class="home-cta-actions">
+          <a class="home-cta-primary" href="https://adp.tencentcloud.com/adp#/">立即开始</a>
+          <a class="home-cta-secondary" href="https://adp.tencentcloud.com/zh">文档</a>
+        </div>
+      </section>
+    </section>
+
+    <!-- ============ 行业解决方案 ============ -->
+    <section class="page page-industries" id="page-industries">
+      <div class="page-head" id="industriesHead">
+        <div class="page-head-tag">行业解决方案</div>
+        <h1 class="page-head-title">行业解决方案</h1>
+        <p class="page-head-desc">面向金融、医疗、政务、运营商、制造、能源、教育、零售等行业，提供从场景识别到智能体落地的端到端方案。</p>
+      </div>
+
+      <!-- 行业 Tab Bar：一条 Bar 上平铺所有行业，直接点选筛选，无需钻取/返回 -->
+      <div class="industry-tabs" id="industryTabs" role="tablist"></div>
+
+      <!-- 轻量语境条：随选中行业更新（定位 + 典型场景） -->
+      <div class="industry-context" id="industryContext"></div>
+
+      <!-- 选中行业的相关案例（平铺） -->
+      <div class="grid-cards" id="industryCases"></div>
+
+      <section class="home-cta page-bottom-cta" aria-label="开始搭建">
+        <div class="home-cta-brand"><img src="./assets/images/white-logo.png" alt="腾讯云 ADP" /></div>
+        <h2>准备开始搭建你的第一个企业智能体？</h2>
+        <p>从模板开始，把知识、工具、流程和模型编排成可交付的企业级智能体。</p>
+        <div class="home-cta-actions">
+          <a class="home-cta-primary" href="https://adp.tencentcloud.com/adp#/">立即开始</a>
+          <a class="home-cta-secondary" href="https://adp.tencentcloud.com/zh">文档</a>
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <div class="backdrop" id="backdrop"></div>
+
+  <script src="./assets/js/app.js?v=tabbar-20260626d"></script>
+</body>
+</html>

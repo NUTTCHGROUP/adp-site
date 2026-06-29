@@ -1,0 +1,262 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "腾讯云 ADP" [ref=e4] [cursor=pointer]:
+        - /url: "#home"
+        - img "腾讯云" [ref=e5]
+      - navigation [ref=e6]:
+        - generic [ref=e7] [cursor=pointer]: 主页
+        - generic [ref=e8] [cursor=pointer]: 案例介绍
+        - generic [ref=e9] [cursor=pointer]: 行业解决方案
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - img [ref=e15]
+          - img [ref=e17]
+          - img [ref=e19]
+          - img [ref=e21]
+          - generic [ref=e22]:
+            - generic [ref=e23]: 知识库
+            - generic [ref=e24]: 可信问答
+          - generic [ref=e25]:
+            - generic [ref=e26]: 流程
+            - generic [ref=e27]: 工具编排
+          - generic [ref=e28]:
+            - generic [ref=e29]: 交付物
+            - generic [ref=e30]: 自动生成
+          - generic [ref=e31]:
+            - generic [ref=e36]: 帮我把客户需求变成一份可评审方案，并生成执行流程
+            - generic [ref=e37]:
+              - generic [ref=e38]: 规划
+              - generic [ref=e39]: 检索
+              - generic [ref=e40]: 生成
+              - generic [ref=e41]: 评审
+        - generic [ref=e42]:
+          - generic "腾讯云 ADP" [ref=e43]:
+            - img "腾讯云 ADP" [ref=e44]
+          - heading "用一句话驱动企业智能体" [level=1] [ref=e45]
+          - paragraph [ref=e46]: ADP 像一个面向企业场景的智能体画布：输入任务目标，平台自动拆解步骤、检索知识、调用工具、编排流程，并输出可评审、可上线、可追踪的业务结果。
+          - generic [ref=e47]:
+            - link "免费开始使用" [ref=e48] [cursor=pointer]:
+              - /url: https://adp.tencentcloud.com/adp#/
+            - link "联系销售团队" [ref=e49] [cursor=pointer]:
+              - /url: https://adp.tencentcloud.com/zh
+      - region "试用 ADP 智能体" [ref=e50]:
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]: TRY ADP
+            - generic [ref=e54]: 输入一句话，预览智能体如何拆解任务
+          - generic [ref=e55]:
+            - textbox "输入你的任务" [ref=e56]: 帮我把客户需求变成一份可评审方案
+            - button "生成方案" [ref=e57] [cursor=pointer]
+          - generic "示例任务" [ref=e58]:
+            - button "生成巡检流程" [ref=e59] [cursor=pointer]
+            - button "整理会议纪要" [ref=e60] [cursor=pointer]
+            - button "分析续费风险" [ref=e61] [cursor=pointer]
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - generic [ref=e66]: 300+
+            - generic [ref=e67]:
+              - text: 行业头部客户
+              - text: 正在使用 ADP 构建智能体
+          - generic [ref=e68]:
+            - generic [ref=e69]: 他们都在用腾讯云 ADP
+            - paragraph [ref=e70]: 覆盖泛互、金融、教育、医疗、零售、出行、传媒、制造等多个行业，从智能客服、知识问答到数据分析，ADP 已在大量真实业务场景中规模化落地。
+        - generic [ref=e71]:
+          - generic "得物" [ref=e72]:
+            - img "得物" [ref=e73]
+          - generic "OPPO" [ref=e74]:
+            - img "OPPO"
+          - generic "货拉拉" [ref=e75]:
+            - img "货拉拉"
+          - generic "清华大学" [ref=e76]:
+            - img "清华大学"
+          - generic "一汽丰田" [ref=e77]:
+            - img "一汽丰田"
+          - generic "伊利" [ref=e78]:
+            - img "伊利"
+          - generic "沃尔玛" [ref=e79]:
+            - img "沃尔玛"
+          - generic "DHL" [ref=e80]:
+            - img "DHL"
+          - generic "富途" [ref=e81]:
+            - img "富途"
+          - generic "realme" [ref=e82]:
+            - img "realme"
+          - generic "长安汽车" [ref=e83]:
+            - img "长安汽车"
+          - generic "上海交通大学" [ref=e84]:
+            - img "上海交通大学"
+          - generic "上海海事大学" [ref=e85]:
+            - img "上海海事大学"
+          - generic "华住会" [ref=e86]:
+            - img "华住会"
+          - generic "香格里拉" [ref=e87]:
+            - img "香格里拉"
+          - generic "碧桂园" [ref=e88]:
+            - img "碧桂园"
+          - generic "中国新闻社" [ref=e89]:
+            - img "中国新闻社"
+          - generic "中国日报" [ref=e90]:
+            - img "中国日报"
+          - generic "南方财经" [ref=e91]:
+            - img "南方财经"
+          - generic "上交所" [ref=e92]:
+            - img "上交所"
+          - generic "国投证券" [ref=e93]:
+            - img "国投证券"
+          - generic "申万宏源" [ref=e94]:
+            - img "申万宏源"
+          - generic "斯凯奇" [ref=e95]:
+            - img "斯凯奇"
+          - generic "五粮液" [ref=e96]:
+            - img "五粮液"
+          - generic "洋河" [ref=e97]:
+            - img "洋河"
+          - generic "大参林" [ref=e98]:
+            - img "大参林"
+          - generic "完达山" [ref=e99]:
+            - img "完达山"
+          - generic "Baseus" [ref=e100]:
+            - img "Baseus"
+          - generic "天马微电子" [ref=e101]:
+            - img "天马微电子"
+          - generic "A.O.史密斯" [ref=e102]:
+            - img "A.O.史密斯"
+      - region "行业场景画册" [ref=e103]:
+        - generic [ref=e104]:
+          - generic [ref=e105]: 行业场景画册
+          - heading "这些业务场景，可以直接搭建成智能体" [level=2] [ref=e106]
+          - paragraph [ref=e107]: 覆盖金融、客服、制造、能源、零售等典型业务场景。展开任意一张卡片，即可看到 ADP 如何把知识、工具与流程编排成可直接落地的行业智能体。
+        - tablist "行业场景" [ref=e108]:
+          - tab "金融风控与投顾" [selected] [ref=e109] [cursor=pointer]:
+            - generic:
+              - generic: 金融风控与投顾
+          - tab "服务与客服运营" [ref=e110] [cursor=pointer]:
+            - generic:
+              - generic: 服务与客服运营
+            - img [ref=e112]
+          - tab "制造与设备运维" [ref=e114] [cursor=pointer]:
+            - generic:
+              - generic: 制造与设备运维
+            - img [ref=e116]
+          - tab "能源巡检与安全" [ref=e118] [cursor=pointer]:
+            - generic:
+              - generic: 能源巡检与安全
+            - img [ref=e120]
+          - tab "零售经营与导购" [ref=e122] [cursor=pointer]:
+            - generic:
+              - generic: 零售经营与导购
+            - img [ref=e124]
+      - region "产品能力横向画册" [ref=e126]:
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e129]: 产品能力画册
+            - heading "从知识到交付，一屏看懂 ADP 能力链路" [level=2] [ref=e130]
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - img "智能体长期记忆界面" [ref=e134]
+              - generic [ref=e135]:
+                - heading "智能体 长期记忆" [level=2] [ref=e136]:
+                  - text: 智能体
+                  - text: 长期记忆
+                - paragraph [ref=e137]: 让每个智能体记住可复用知识、流程上下文和企业约束，做到一次搭建、持续进化。
+            - generic [ref=e138]:
+              - generic [ref=e139]:
+                - heading "专家 协作网络" [level=2] [ref=e140]:
+                  - text: 专家
+                  - text: 协作网络
+                - paragraph [ref=e141]: 规划、检索、写作、评审和工具执行智能体协同完成复杂任务。
+              - img "专家协作网络界面" [ref=e143]
+            - generic [ref=e144]:
+              - img "从需求到交付界面" [ref=e146]
+              - generic [ref=e147]:
+                - heading "从需求 到交付" [level=2] [ref=e148]:
+                  - text: 从需求
+                  - text: 到交付
+                - paragraph [ref=e149]: 把模糊业务意图自动拆成结构化方案、流程、文档和可执行动作。
+            - generic [ref=e150]:
+              - generic [ref=e151]:
+                - heading "技能 模板沉淀" [level=2] [ref=e152]:
+                  - text: 技能
+                  - text: 模板沉淀
+                - paragraph [ref=e153]: 在团队内标准化技能、工具和模板，让不同部门都能基于成熟样板快速搭建。
+              - img "技能模板沉淀界面" [ref=e155]
+      - region "应用模式演示" [ref=e157]:
+        - heading "三种智能体应用模式 覆盖从问答到协作执行" [level=2] [ref=e158]:
+          - text: 三种智能体应用模式
+          - text: 覆盖从问答到协作执行
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - button "标准模式 由模型自主判断使用者问题应执行工作流程，或执行基于高质量知识检索的问答，是产品内建最佳应用模式。" [ref=e161] [cursor=pointer]:
+              - heading "标准模式" [level=3] [ref=e162]
+              - paragraph [ref=e163]: 由模型自主判断使用者问题应执行工作流程，或执行基于高质量知识检索的问答，是产品内建最佳应用模式。
+            - button "单工作流模式 使用指定的工作流程来回应所有请求，适用于有唯一且明确的业务流程的企业场景，支持异步呼叫工作流程。" [ref=e164] [cursor=pointer]:
+              - heading "单工作流模式" [level=3] [ref=e165]
+              - paragraph [ref=e166]: 使用指定的工作流程来回应所有请求，适用于有唯一且明确的业务流程的企业场景，支持异步呼叫工作流程。
+            - button "多智能体模式 根据自然语言指令，由大模型自主规划来规划任务。回复更灵活，广泛适用于生活咨询、百科知识等场景。" [ref=e167] [cursor=pointer]:
+              - heading "多智能体模式" [level=3] [ref=e168]
+              - paragraph [ref=e169]: 根据自然语言指令，由大模型自主规划来规划任务。回复更灵活，广泛适用于生活咨询、百科知识等场景。
+          - generic [ref=e172]:
+            - generic [ref=e173]: 标准模式：模型自主判断
+            - img "标准模式自动分流示意" [ref=e174]:
+              - generic [ref=e176]: 用户问题
+              - generic [ref=e178]: 模型自主判断
+              - generic [ref=e180]: 知识问答
+              - generic [ref=e181]: 检索规则 / 常见问答
+              - generic [ref=e183]: 流程执行
+              - generic [ref=e184]: 查订单 / 建工单
+            - generic [ref=e190]: 同一个问题进入后，平台自动判断该走知识问答还是业务流程。
+      - heading "行业模板" [level=2] [ref=e192]
+      - generic [ref=e193]:
+        - generic [ref=e194] [cursor=pointer]:
+          - generic [ref=e195]: 金融
+          - generic [ref=e196]: 智能风控、智能投顾、智能客服
+          - img [ref=e198]
+          - generic [ref=e200]: →
+        - generic [ref=e201] [cursor=pointer]:
+          - generic [ref=e202]: 医疗
+          - generic [ref=e203]: 智能导诊、病历理解、临床辅助
+          - img [ref=e205]
+          - generic [ref=e208]: →
+        - generic [ref=e209] [cursor=pointer]:
+          - generic [ref=e210]: 政务
+          - generic [ref=e211]: 政策问答、政务热线、智能办事
+          - img [ref=e213]
+          - generic [ref=e215]: →
+        - generic [ref=e216] [cursor=pointer]:
+          - generic [ref=e217]: 运营商
+          - generic [ref=e218]: 云网运维、装维服务、营销转化
+          - img [ref=e220]
+          - generic [ref=e223]: →
+        - generic [ref=e224] [cursor=pointer]:
+          - generic [ref=e225]: 制造
+          - generic [ref=e226]: 工艺知识、质检识别、设备运维
+          - img [ref=e228]
+          - generic [ref=e231]: →
+        - generic [ref=e232] [cursor=pointer]:
+          - generic [ref=e233]: 能源
+          - generic [ref=e234]: 电网运行、设备巡检、安全合规
+          - img [ref=e236]
+          - generic [ref=e238]: →
+        - generic [ref=e239] [cursor=pointer]:
+          - generic [ref=e240]: 教育
+          - generic [ref=e241]: 智能助教、学情分析、内容生成
+          - img [ref=e243]
+          - generic [ref=e246]: →
+        - generic [ref=e247] [cursor=pointer]:
+          - generic [ref=e248]: 零售消费
+          - generic [ref=e249]: 智能导购、经营分析、私域运营
+          - img [ref=e251]
+          - generic [ref=e254]: →
+      - region "开始搭建" [ref=e255]:
+        - img "腾讯云 ADP" [ref=e257]
+        - heading "准备开始搭建你的第一个企业智能体？" [level=2] [ref=e258]
+        - paragraph [ref=e259]: 从模板开始，把知识、工具、流程和模型编排成可交付的企业级智能体。
+        - generic [ref=e260]:
+          - link "立即开始" [ref=e261] [cursor=pointer]:
+            - /url: https://adp.tencentcloud.com/adp#/
+          - link "文档" [ref=e262] [cursor=pointer]:
+            - /url: https://adp.tencentcloud.com/zh

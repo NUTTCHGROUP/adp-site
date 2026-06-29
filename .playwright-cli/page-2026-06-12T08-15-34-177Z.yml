@@ -1,0 +1,188 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "腾讯云 ADP" [ref=e4] [cursor=pointer]:
+        - /url: "#home"
+        - img "腾讯云 ADP" [ref=e5]
+      - navigation [ref=e6]:
+        - generic [ref=e7] [cursor=pointer]: 主页
+        - generic [ref=e8] [cursor=pointer]: 案例介绍
+        - generic [ref=e9] [cursor=pointer]: 行业解决方案
+  - main [ref=e10]:
+    - generic [ref=e221]:
+      - generic [ref=e222]:
+        - generic [ref=e223]: 案例样板间
+        - heading "案例介绍" [level=1] [ref=e224]
+        - paragraph [ref=e225]: 9 个强样板间，覆盖服务、运维、数据、工程、治理五大方向，沉淀于「焱云—大模型应用实践」85 条真实案例。
+      - generic [ref=e226]:
+        - generic [ref=e687]: 分类筛选：
+        - button "全部" [ref=e688] [cursor=pointer]
+        - button "服务营销" [ref=e689] [cursor=pointer]
+        - button "云网运维" [ref=e690] [cursor=pointer]
+        - button "数据分析" [ref=e691] [cursor=pointer]
+        - button "工程建设" [ref=e692] [cursor=pointer]
+        - button "运营治理" [ref=e693] [cursor=pointer]
+      - generic [ref=e234]:
+        - generic [ref=e694] [cursor=pointer]:
+          - generic [ref=e695]:
+            - generic [ref=e696]: 服务营销
+            - generic [ref=e697]: ★ 精装
+          - generic [ref=e698]: 智能装维助手
+          - generic [ref=e699]: 从故障服务到营销转化的一体化智能体
+          - generic [ref=e700]:
+            - generic [ref=e701]:
+              - generic [ref=e702]: "-42% ↓"
+              - generic [ref=e703]: 工单平均处理时长
+            - generic [ref=e704]:
+              - generic [ref=e705]: +28% ↑
+              - generic [ref=e706]: 一次性解决率
+            - generic [ref=e707]:
+              - generic [ref=e708]: +15% ↑
+              - generic [ref=e709]: 二次营销转化率
+            - generic [ref=e710]:
+              - generic [ref=e711]: +11点 ↑
+              - generic [ref=e712]: 客户满意度
+          - generic [ref=e713]:
+            - generic [ref=e714]: 完整内容
+            - generic [ref=e715]: 查看详情 →
+        - generic [ref=e716] [cursor=pointer]:
+          - generic [ref=e718]: 云网运维
+          - generic [ref=e719]: 云网故障智能处置
+          - generic [ref=e720]: 1 分钟发现、5 分钟定位、10 分钟处置
+          - generic [ref=e721]:
+            - generic [ref=e722]:
+              - generic [ref=e723]: "-65% ↓"
+              - generic [ref=e724]: 平均恢复时长
+            - generic [ref=e725]:
+              - generic [ref=e726]: "-78% ↓"
+              - generic [ref=e727]: 告警噪音降噪
+            - generic [ref=e728]:
+              - generic [ref=e729]: 92% ↑
+              - generic [ref=e730]: 根因定位准确率
+          - generic [ref=e731]:
+            - generic [ref=e732]: 完整内容
+            - generic [ref=e733]: 查看详情 →
+        - generic [ref=e734] [cursor=pointer]:
+          - generic [ref=e736]: 数据分析
+          - generic [ref=e737]: 智能问数助手
+          - generic [ref=e738]: 一句话问数、自动归因、自动出报告
+          - generic [ref=e739]:
+            - generic [ref=e740]:
+              - generic [ref=e741]: "-90% ↓"
+              - generic [ref=e742]: 取数响应时长
+            - generic [ref=e743]:
+              - generic [ref=e744]: 10x ↑
+              - generic [ref=e745]: 报告产出效率
+            - generic [ref=e746]:
+              - generic [ref=e747]: 94% ↑
+              - generic [ref=e748]: 查询准确率
+          - generic [ref=e749]:
+            - generic [ref=e750]: 完整内容
+            - generic [ref=e751]: 查看详情 →
+        - generic [ref=e752] [cursor=pointer]:
+          - generic [ref=e754]: 工程建设
+          - generic [ref=e755]: 工程建设智能监管
+          - generic [ref=e756]: 问知识、问数据、看现场、识风险
+          - generic [ref=e757]:
+            - generic [ref=e758]:
+              - generic [ref=e759]: +85% ↑
+              - generic [ref=e760]: 异常发现及时率
+            - generic [ref=e761]:
+              - generic [ref=e762]: +60% ↑
+              - generic [ref=e763]: 现场巡检效率
+            - generic [ref=e764]:
+              - generic [ref=e765]: +73% ↑
+              - generic [ref=e766]: 合规风险识别
+          - generic [ref=e767]:
+            - generic [ref=e768]: 完整内容
+            - generic [ref=e769]: 查看详情 →
+        - generic [ref=e770] [cursor=pointer]:
+          - generic [ref=e772]: 运营治理
+          - generic [ref=e773]: 客服工单智能分析
+          - generic [ref=e774]: 自动摘要、自动归类、自动发现服务风险
+          - generic [ref=e775]:
+            - generic [ref=e776]:
+              - generic [ref=e777]: 96% ↑
+              - generic [ref=e778]: 工单分类准确率
+            - generic [ref=e779]:
+              - generic [ref=e780]: +72h ↑
+              - generic [ref=e781]: 服务风险预警提前量
+            - generic [ref=e782]:
+              - generic [ref=e783]: 100% ↑
+              - generic [ref=e784]: 质检覆盖率
+          - generic [ref=e785]:
+            - generic [ref=e786]: 完整内容
+            - generic [ref=e787]: 查看详情 →
+        - generic [ref=e788] [cursor=pointer]:
+          - generic [ref=e789]:
+            - generic [ref=e790]: 运营治理
+            - generic [ref=e791]: ★ 精装
+          - generic [ref=e792]: AI 管理驾驶舱
+          - generic [ref=e793]: 一句话调用多业务系统，自动生成管理摘要
+          - generic [ref=e794]:
+            - generic [ref=e795]:
+              - generic [ref=e796]: +20% ↑
+              - generic [ref=e797]: 营收同比
+            - generic [ref=e798]:
+              - generic [ref=e799]: 3 项 ↑
+              - generic [ref=e800]: 异常预警
+            - generic [ref=e801]:
+              - generic [ref=e802]: "-70% ↓"
+              - generic [ref=e803]: 人工耗时
+            - generic [ref=e804]:
+              - generic [ref=e805]: 分钟级 ↑
+              - generic [ref=e806]: 报表产出
+          - generic [ref=e807]:
+            - generic [ref=e808]: 完整内容
+            - generic [ref=e809]: 查看详情 →
+        - generic [ref=e810] [cursor=pointer]:
+          - generic [ref=e812]: 服务营销
+          - generic [ref=e813]: 一线支撑助手
+          - generic [ref=e814]: 问答、派单、预警一体化
+          - generic [ref=e815]:
+            - generic [ref=e816]:
+              - generic [ref=e817]: +58% ↑
+              - generic [ref=e818]: 一线人员问答自助率
+            - generic [ref=e819]:
+              - generic [ref=e820]: 94% ↑
+              - generic [ref=e821]: 派单准确率
+            - generic [ref=e822]:
+              - generic [ref=e823]: "-50% ↓"
+              - generic [ref=e824]: 预警响应时长
+          - generic [ref=e825]:
+            - generic [ref=e826]: 完整内容
+            - generic [ref=e827]: 查看详情 →
+        - generic [ref=e828] [cursor=pointer]:
+          - generic [ref=e830]: 云网运维
+          - generic [ref=e831]: 智能变更申请
+          - generic [ref=e832]: 自动填单、自动审查、自动合规校验
+          - generic [ref=e833]:
+            - generic [ref=e834]:
+              - generic [ref=e835]: "-75% ↓"
+              - generic [ref=e836]: 填单耗时
+            - generic [ref=e837]:
+              - generic [ref=e838]: +22% ↑
+              - generic [ref=e839]: 审查通过率
+            - generic [ref=e840]:
+              - generic [ref=e841]: +40% ↑
+              - generic [ref=e842]: 高危变更拦截
+          - generic [ref=e843]:
+            - generic [ref=e844]: 完整内容
+            - generic [ref=e845]: 查看详情 →
+        - generic [ref=e846] [cursor=pointer]:
+          - generic [ref=e848]: 云网运维
+          - generic [ref=e849]: 网络配置智能稽核
+          - generic [ref=e850]: 变更前发现风险，减少故障隐患
+          - generic [ref=e851]:
+            - generic [ref=e852]:
+              - generic [ref=e853]: +88% ↑
+              - generic [ref=e854]: 配置错误检出率
+            - generic [ref=e855]:
+              - generic [ref=e856]: 100% ↑
+              - generic [ref=e857]: 稽核覆盖率
+            - generic [ref=e858]:
+              - generic [ref=e859]: "-46% ↓"
+              - generic [ref=e860]: 关联故障下降
+          - generic [ref=e861]:
+            - generic [ref=e862]: 完整内容
+            - generic [ref=e863]: 查看详情 →

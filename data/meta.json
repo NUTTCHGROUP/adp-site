@@ -1,0 +1,12 @@
+{
+  "title": "腾讯云 ADP",
+  "subtitle": "智能体开发平台 · 大模型应用开发平台",
+  "org": "腾讯 CSIG · 焱云大模型应用实践",
+  "version": "v1.0",
+  "summary": {
+    "total": 14,
+    "categories": 5,
+    "coverage": "服务 / 运维 / 数据 / 工程 / 治理",
+    "baseCases": 85
+  }
+}

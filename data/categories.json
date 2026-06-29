@@ -1,0 +1,27 @@
+[
+  {
+    "id": "service",
+    "name": "服务营销",
+    "color": "#1E6FFF"
+  },
+  {
+    "id": "ops",
+    "name": "云网运维",
+    "color": "#00B5D8"
+  },
+  {
+    "id": "data",
+    "name": "数据分析",
+    "color": "#7C4DFF"
+  },
+  {
+    "id": "engineer",
+    "name": "工程建设",
+    "color": "#00C896"
+  },
+  {
+    "id": "governance",
+    "name": "运营治理",
+    "color": "#FF7A45"
+  }
+]

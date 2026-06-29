@@ -1,0 +1,25 @@
+{
+  "$schema": "./schema/manifest.schema.json",
+  "parts": {
+    "meta": "meta.json",
+    "product": "product.json",
+    "categories": "categories.json",
+    "industries": "industries.json"
+  },
+  "cases": [
+    "cases/knowledge-rag.json",
+    "cases/install-maintain.json",
+    "cases/fault-1-5-10.json",
+    "cases/chatbi.json",
+    "cases/engineer-monitor.json",
+    "cases/service-analysis.json",
+    "cases/management-cockpit.json",
+    "cases/smart-support.json",
+    "cases/change-apply.json",
+    "cases/config-audit.json",
+    "cases/wealth-advisor.json",
+    "cases/edu-assistant.json",
+    "cases/retail-guide.json",
+    "cases/med-triage.json"
+  ]
+}

@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 安全策略：纯静态站点，脚本/样式/数据均同源；favicon 为 data: SVG，内联样式来自 JS 动效 -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>腾讯云 ADP · 智能体开发平台</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230052D9'/%3E%3Ctext x='12' y='17' font-size='13' font-family='Arial' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="./assets/css/main.css?v=mobile-20260629b" />
@@ -15,7 +18,7 @@
       <!-- 官方 Logo 图片：把图片放到 assets/images/logo.png 即可 -->
       <a class="brand" href="#home" data-nav="home" aria-label="腾讯云 ADP">
         <img class="brand-logo" src="./assets/images/Tencentcloudlogo.png?v=poster-20260612o" alt="腾讯云"
-             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('span'),{className:'brand-fallback',textContent:'腾讯云'}))" />
+             data-fallback="腾讯云" data-fallback-class="brand-fallback" />
       </a>
 
       <!-- 主导航：3 大板块（居右） -->
@@ -55,13 +58,13 @@
         <div class="poster-title-block">
           <div class="hero-brand" id="heroBrand" aria-label="腾讯云 ADP">
             <img class="hero-brand-img" src="./assets/images/logo.png?v=poster-20260612o" alt="腾讯云 ADP"
-                 onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('span'),{className:'hero-brand-text',innerHTML:'腾讯云<b>ADP</b>'}))" />
+                 data-fallback-class="hero-brand-text" data-fallback-html="腾讯云<b>ADP</b>" />
           </div>
           <h1 class="hero-title"><span id="heroHeadline">用一句话驱动企业智能体</span></h1>
           <p class="hero-desc" id="heroDesc"></p>
           <div class="hero-cta" id="heroCta">
-            <a class="hero-cta-primary" href="https://adp.tencentcloud.com/adp#/">免费开始使用</a>
-            <a class="hero-cta-secondary" href="https://adp.tencentcloud.com/zh">联系销售团队</a>
+            <a class="hero-cta-primary" href="https://adp.tencentcloud.com/adp#/" rel="noopener noreferrer">免费开始使用</a>
+            <a class="hero-cta-secondary" href="https://adp.tencentcloud.com/zh" rel="noopener noreferrer">联系销售团队</a>
           </div>
         </div>
       </div>
@@ -294,8 +297,8 @@
         <h2>准备开始搭建你的第一个企业智能体？</h2>
         <p>从模板开始，把知识、工具、流程和模型编排成可交付的企业级智能体。</p>
         <div class="home-cta-actions">
-          <a class="home-cta-primary" href="https://adp.tencentcloud.com/adp#/">立即开始</a>
-          <a class="home-cta-secondary" href="https://adp.tencentcloud.com/zh">文档</a>
+          <a class="home-cta-primary" href="https://adp.tencentcloud.com/adp#/" rel="noopener noreferrer">立即开始</a>
+          <a class="home-cta-secondary" href="https://adp.tencentcloud.com/zh" rel="noopener noreferrer">文档</a>
         </div>
       </section>
     </section>
@@ -325,8 +328,8 @@
         <h2>准备开始搭建你的第一个企业智能体？</h2>
         <p>从模板开始，把知识、工具、流程和模型编排成可交付的企业级智能体。</p>
         <div class="home-cta-actions">
-          <a class="home-cta-primary" href="https://adp.tencentcloud.com/adp#/">立即开始</a>
-          <a class="home-cta-secondary" href="https://adp.tencentcloud.com/zh">文档</a>
+          <a class="home-cta-primary" href="https://adp.tencentcloud.com/adp#/" rel="noopener noreferrer">立即开始</a>
+          <a class="home-cta-secondary" href="https://adp.tencentcloud.com/zh" rel="noopener noreferrer">文档</a>
         </div>
       </section>
     </section>
@@ -353,8 +356,8 @@
         <h2>准备开始搭建你的第一个企业智能体？</h2>
         <p>从模板开始，把知识、工具、流程和模型编排成可交付的企业级智能体。</p>
         <div class="home-cta-actions">
-          <a class="home-cta-primary" href="https://adp.tencentcloud.com/adp#/">立即开始</a>
-          <a class="home-cta-secondary" href="https://adp.tencentcloud.com/zh">文档</a>
+          <a class="home-cta-primary" href="https://adp.tencentcloud.com/adp#/" rel="noopener noreferrer">立即开始</a>
+          <a class="home-cta-secondary" href="https://adp.tencentcloud.com/zh" rel="noopener noreferrer">文档</a>
         </div>
       </section>
     </section>

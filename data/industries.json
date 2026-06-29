@@ -1,0 +1,153 @@
+[
+  {
+    "id": "finance",
+    "name": "金融",
+    "tagline": "智能风控、智能投顾、智能客服",
+    "icon": "finance",
+    "color": "#0052D9",
+    "scenarios": [
+      "智能投顾问答与个性化推荐",
+      "风控规则自然语言查询与审计",
+      "理财经理 Copilot：客户画像 + 产品匹配",
+      "合规文档智能审核与差异比对"
+    ],
+    "relatedCases": [
+      "wealth-advisor",
+      "knowledge-rag",
+      "chatbi",
+      "service-analysis"
+    ]
+  },
+  {
+    "id": "healthcare",
+    "name": "医疗",
+    "tagline": "智能导诊、病历理解、临床辅助",
+    "icon": "health",
+    "color": "#00B5D8",
+    "scenarios": [
+      "院内智能导诊与分诊",
+      "电子病历结构化与质控",
+      "医学知识库 RAG 问答",
+      "影像与检验报告多模态理解"
+    ],
+    "relatedCases": [
+      "med-triage",
+      "knowledge-rag",
+      "service-analysis"
+    ]
+  },
+  {
+    "id": "government",
+    "name": "政务",
+    "tagline": "政策问答、政务热线、智能办事",
+    "icon": "gov",
+    "color": "#7C4DFF",
+    "scenarios": [
+      "12345 热线智能受理与多部门派单",
+      "政策法规库 RAG 问答与办事指南",
+      "工单智能归类与服务风险预警",
+      "政务公文合规审查与政策库比对"
+    ],
+    "relatedCases": [
+      "knowledge-rag",
+      "service-analysis",
+      "smart-support",
+      "change-apply"
+    ]
+  },
+  {
+    "id": "telecom",
+    "name": "运营商",
+    "tagline": "云网运维、装维服务、营销转化",
+    "icon": "telecom",
+    "color": "#00C896",
+    "scenarios": [
+      "装维师傅一线 Copilot",
+      "云网故障 1-5-10 智能处置",
+      "网络配置稽核与变更管控",
+      "客服工单智能分析与归因"
+    ],
+    "relatedCases": [
+      "install-maintain",
+      "fault-1-5-10",
+      "config-audit",
+      "change-apply",
+      "service-analysis",
+      "smart-support"
+    ]
+  },
+  {
+    "id": "manufacturing",
+    "name": "制造",
+    "tagline": "工艺知识、质检识别、设备运维",
+    "icon": "factory",
+    "color": "#FF7A45",
+    "scenarios": [
+      "工艺知识库与设备手册 RAG",
+      "产线视觉质检与缺陷分析",
+      "设备故障诊断与维修指引",
+      "MES 数据问答与异常归因"
+    ],
+    "relatedCases": [
+      "fault-1-5-10",
+      "engineer-monitor",
+      "chatbi"
+    ]
+  },
+  {
+    "id": "energy",
+    "name": "能源",
+    "tagline": "电网运行、设备巡检、安全合规",
+    "icon": "energy",
+    "color": "#EB2F96",
+    "scenarios": [
+      "电网调度知识问答",
+      "无人机/摄像头巡检智能识别",
+      "安全规章问答与合规校验",
+      "工程进度多模态监管"
+    ],
+    "relatedCases": [
+      "engineer-monitor",
+      "config-audit",
+      "fault-1-5-10"
+    ]
+  },
+  {
+    "id": "education",
+    "name": "教育",
+    "tagline": "校园知识答疑、智能助教、学情分析",
+    "icon": "edu",
+    "color": "#13C2C2",
+    "scenarios": [
+      "校园知识库 RAG 答疑（规章/招生/选课/报销）",
+      "学科解题辅导与知识点溯源",
+      "学情数据 ChatBI 归因分析",
+      "校园服务工单智能受理与派单"
+    ],
+    "relatedCases": [
+      "edu-assistant",
+      "knowledge-rag",
+      "chatbi",
+      "service-analysis"
+    ]
+  },
+  {
+    "id": "retail",
+    "name": "零售消费",
+    "tagline": "智能导购、经营分析、私域运营",
+    "icon": "retail",
+    "color": "#722ED1",
+    "scenarios": [
+      "门店导购话术与商品推荐",
+      "经营数据 ChatBI 一句话出报告",
+      "私域客服工单智能分析",
+      "线下巡店多模态合规检查"
+    ],
+    "relatedCases": [
+      "retail-guide",
+      "chatbi",
+      "service-analysis",
+      "engineer-monitor"
+    ]
+  }
+]

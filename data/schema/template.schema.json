@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://adp-site/schema/template.schema.json",
+  "title": "ADP 案例（单个 case 文件）",
+  "type": "object",
+  "required": [
+    "id", "name", "shortName", "category", "tagline",
+    "industries", "capabilities", "kpis", "metrics", "painPoints", "demo"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "唯一标识，需与文件名一致" },
+    "name": { "type": "string" },
+    "shortName": { "type": "string" },
+    "category": { "type": "string", "description": "须为 categories.json 中存在的 id" },
+    "tagline": { "type": "string" },
+    "icon": { "type": "string" },
+    "highlight": { "type": "boolean" },
+    "audience": { "type": "string" },
+    "industries": {
+      "type": "array",
+      "items": { "type": "string", "description": "须为 industries.json 中存在的 id" }
+    },
+    "kpis": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "value"],
+        "properties": {
+          "label": { "type": "string" },
+          "value": { "type": "string" },
+          "trend": { "type": "string", "enum": ["up", "down", "flat"] }
+        }
+      }
+    },
+    "painPoints": { "type": "array", "items": { "type": "string" } },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "key": { "type": "string" },
+          "name": { "type": "string" },
+          "desc": { "type": "string" }
+        }
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "value"],
+        "properties": {
+          "name": { "type": "string" },
+          "value": { "type": "string" },
+          "unit": { "type": "string" }
+        }
+      }
+    },
+    "orchestration": {
+      "type": "object",
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "label"],
+            "properties": {
+              "id": { "type": "string" },
+              "type": { "$ref": "#/definitions/stepType" },
+              "label": { "type": "string" },
+              "desc": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "demo": {
+      "type": "object",
+      "required": ["presets"],
+      "properties": {
+        "presets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title", "steps"],
+            "properties": {
+              "title": { "type": "string" },
+              "user": { "type": "string" },
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["type"],
+                  "properties": {
+                    "type": { "$ref": "#/definitions/stepType" },
+                    "text": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "build": { "$ref": "#/definitions/guide" },
+    "deploy": { "$ref": "#/definitions/guide" }
+  },
+  "definitions": {
+    "stepType": {
+      "type": "string",
+      "enum": [
+        "input", "intent", "plan", "tool", "rag", "multimodal", "llm",
+        "answer", "action", "output", "chart", "table", "doc", "image", "verdict"
+      ]
+    },
+    "guide": {
+      "type": "object",
+      "properties": {
+        "intro": { "type": "string" },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title"],
+            "properties": {
+              "title": { "type": "string" },
+              "desc": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

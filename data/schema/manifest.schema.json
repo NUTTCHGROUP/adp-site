@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://adp-site/schema/manifest.schema.json",
+  "title": "ADP 数据装配清单",
+  "type": "object",
+  "required": ["parts", "cases"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "parts": {
+      "type": "object",
+      "required": ["meta", "product", "categories", "industries"],
+      "properties": {
+        "meta": { "type": "string" },
+        "product": { "type": "string" },
+        "categories": { "type": "string" },
+        "industries": { "type": "string" }
+      }
+    },
+    "cases": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^cases/.+\\.json$" },
+      "description": "案例文件相对路径，顺序即页面展示顺序"
+    }
+  }
+}

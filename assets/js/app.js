@@ -124,19 +124,37 @@
   };
 
   // ---------- 加载数据 ----------
+  // 数据已按维度拆分为多文件，由 data/manifest.json 统一装配：
+  //   parts: meta / product / categories / industries（各一个文件）
+  //   cases: 每个案例单独一个 JSON（便于按案例维护）
+  // 装配后仍组装成与旧版一致的 state.data 结构，下游渲染逻辑无需改动。
   async function loadData() {
+    const base = './data/';
+    const fetchJSON = async (rel) => {
+      const res = await fetch(base + rel, { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status + ' @ ' + rel);
+      return res.json();
+    };
     try {
-      const res = await fetch('./data/templates.json', { cache: 'no-store' });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      state.data = await res.json();
+      const manifest = await fetchJSON('manifest.json');
+      const parts = manifest.parts || {};
+      const caseFiles = Array.isArray(manifest.cases) ? manifest.cases : [];
+      const [meta, product, categories, industries, ...templates] = await Promise.all([
+        fetchJSON(parts.meta || 'meta.json'),
+        fetchJSON(parts.product || 'product.json'),
+        fetchJSON(parts.categories || 'categories.json'),
+        fetchJSON(parts.industries || 'industries.json'),
+        ...caseFiles.map((c) => fetchJSON(c)),
+      ]);
+      state.data = { meta, product, categories, industries, templates };
     } catch (err) {
-      console.error('加载 templates.json 失败：', err);
+      console.error('加载数据失败：', err);
       $('.main').innerHTML = `
         <div class="placeholder-box">
           <div class="placeholder-icon">⚠️</div>
           <div class="placeholder-title">数据加载失败</div>
           <div class="placeholder-desc">
-            无法读取 <code>data/templates.json</code>。请通过本地 HTTP 服务器访问（如 <code>python3 -m http.server 8000</code>），不要用 <code>file://</code> 直接打开。
+            无法读取 <code>data/manifest.json</code> 及其分块文件。请通过本地 HTTP 服务器访问（如 <code>python3 -m http.server 8000</code>），不要用 <code>file://</code> 直接打开。
           </div>
         </div>`;
       throw err;
@@ -162,7 +180,7 @@
       .filter(Boolean)
       .slice(0, 3);
     return `
-      <div class="tcard" data-id="${t.id}">
+      <div class="tcard" data-id="${escape(t.id)}">
         <div class="tcard-head">
           <span class="tcard-cat">${escape(cat.name)}</span>
           ${t.highlight ? '<span class="tcard-star">★ 精装</span>' : ''}
@@ -240,7 +258,7 @@
     grid.innerHTML = (state.data.industries || [])
       .map(
         (ind) => `
-        <div class="ind-card" data-ind="${ind.id}">
+        <div class="ind-card" data-ind="${escape(ind.id)}">
           <div class="ind-name">${escape(ind.name)}</div>
           <div class="ind-tag">${escape(ind.tagline)}</div>
           <div class="ind-icon">${renderIcon(ind.icon)}</div>
@@ -277,7 +295,7 @@
       cats
         .map(
           (c) =>
-            `<button class="chip${state.caseFilter === c.id ? ' active' : ''}" data-cat="${c.id}">${escape(c.name)}</button>`
+            `<button class="chip${state.caseFilter === c.id ? ' active' : ''}" data-cat="${escape(c.id)}">${escape(c.name)}</button>`
         )
         .join('');
     filter.onclick = (e) => {
@@ -368,7 +386,7 @@
       <div class="logo-item" title="${escape(b.name)}">
         <img class="logo-img" src="./assets/images/logos/${escape(b.file)}?v=${LOGO_VER}"
              alt="${escape(b.name)}" loading="lazy"
-             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-zh',textContent:'${escape(b.name)}'}))" />
+             data-fallback="${escape(b.name)}" data-fallback-class="logo-zh" />
       </div>`;
   }
 
@@ -661,7 +679,7 @@
       tabs.innerHTML = inds
         .map((ind) => {
           const on = ind.id === activeId;
-          return `<button class="ind-tab${on ? ' active' : ''}" role="tab" aria-selected="${on}" data-ind="${ind.id}">
+          return `<button class="ind-tab${on ? ' active' : ''}" role="tab" aria-selected="${on}" data-ind="${escape(ind.id)}">
             <span class="ind-tab-icon">${renderIcon(ind.icon)}</span>
             <span class="ind-tab-name">${escape(ind.name)}</span>
           </button>`;
@@ -1605,7 +1623,7 @@
       extra += `<div class="adp-step-deliver"><b>${escape(step.deliver.name)}</b><ul>${items}</ul></div>`;
     }
     return `
-      <div class="adp-step adp-step-${step.type}">
+      <div class="adp-step adp-step-${escape(step.type)}">
         <div class="adp-step-dot">${meta.icon}</div>
         <div class="adp-step-main">
           <div class="adp-step-top"><span class="adp-step-kind">${escape(meta.tag)}</span><b>${escape(step.title)}</b></div>
@@ -1781,6 +1799,37 @@
     selectScene(activeId);
   }
 
+  // ---------- 图片加载失败兜底 ----------
+  // 用 data-fallback / data-fallback-class / data-fallback-html 描述兜底文案，
+  // 统一通过捕获阶段的 error 事件处理，替代 HTML 内联 onerror，从而可收紧 CSP script-src。
+  function applyImgFallback(img) {
+    if (!(img instanceof HTMLImageElement) || img.dataset.fallbackDone) return;
+    img.dataset.fallbackDone = '1';
+    const span = document.createElement('span');
+    if (img.dataset.fallbackClass) span.className = img.dataset.fallbackClass;
+    // data-fallback-html 仅用于页面内置的可信常量（非外部数据），以保留 <b> 等富文本
+    if (img.dataset.fallbackHtml != null) span.innerHTML = img.dataset.fallbackHtml;
+    else span.textContent = img.dataset.fallback || '';
+    img.replaceWith(span);
+  }
+  function setupImageFallback() {
+    // img 的 error 不冒泡，必须在捕获阶段监听
+    document.addEventListener(
+      'error',
+      (e) => {
+        const t = e.target;
+        if (t instanceof HTMLImageElement && (t.dataset.fallback != null || t.dataset.fallbackHtml != null)) {
+          applyImgFallback(t);
+        }
+      },
+      true
+    );
+    // 兜底：脚本加载前就已失败的静态图片
+    $$('img[data-fallback], img[data-fallback-html]').forEach((img) => {
+      if (img.complete && img.naturalWidth === 0) applyImgFallback(img);
+    });
+  }
+
   // ---------- 顶部 nav 点击 ----------
   function setupTopNav() {
     document.body.addEventListener('click', (e) => {
@@ -1795,6 +1844,7 @@
   // ---------- 启动 ----------
   async function init() {
     applyDeviceClass();
+    setupImageFallback();
     setupMobileMenu();
     setupTopNav();
     setupHeroTry();

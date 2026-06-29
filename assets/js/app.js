@@ -151,8 +151,8 @@
     (state.data.templates || []).find((t) => t.id === id) || null;
 
   // ------------------------------------------------------------
-  //  统一案例卡片（功能先行：名称 + 价值定位 + 能力标签 + 1 个核心指标徽章）
-  //  完整 KPI 移入案例详情页展示。
+  //  统一案例卡片（功能先行：名称 + 价值定位 + 能力标签）
+  //  效果数据不在卡片外露，全部移入案例详情页「量化成效」展示。
   // ------------------------------------------------------------
   function caseCardHTML(t) {
     const cat = getCategory(t.category);
@@ -161,8 +161,6 @@
       .map((c) => c.name || c.key)
       .filter(Boolean)
       .slice(0, 3);
-    // 核心指标徽章：取第一个 KPI 作为「一眼见价值」的钩子
-    const hero = (t.kpis || [])[0];
     return `
       <div class="tcard" data-id="${t.id}">
         <div class="tcard-head">
@@ -179,13 +177,6 @@
             : ''
         }
         <div class="tcard-foot">
-          ${
-            hero
-              ? `<span class="tcard-metric ${hero.trend || ''}"><b>${escape(
-                  hero.value
-                )}</b> ${escape(hero.label)}</span>`
-              : `<span>${t.placeholder ? '占位结构 · 待填充' : '完整内容'}</span>`
-          }
           <span class="tcard-arrow">查看详情 →</span>
         </div>
       </div>`;
@@ -1666,7 +1657,7 @@
       <div class="adp-trace-task"><span>任务</span><p>${escape(scene.prompt)}</p></div>
       <div class="adp-think" data-collapsed="false">
         <button type="button" class="adp-think-head" aria-expanded="true">
-          <span class="adp-think-ico">🧠</span>
+          <span class="adp-think-ico"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4 12.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26A7 7 0 0 0 12 2Zm-3 18a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9Z"/></svg></span>
           <b class="adp-think-title">正在思考…</b>
           <span class="adp-think-toggle" aria-hidden="true">▾</span>
         </button>

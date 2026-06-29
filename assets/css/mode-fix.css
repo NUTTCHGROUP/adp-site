@@ -3297,6 +3297,54 @@ body.is-mobile-device .ind-icon svg { width: 26px !important; height: 26px !impo
 }
 
 /* ================================================================
+   用户需求微调（2026-06-29）：移动端细节优化
+   ================================================================ */
+@media (max-width: 768px) {
+  /* —— 交付物结果卡与「300+」客户墙之间空隙过大：收紧顶部留白 —— */
+  .logo-wall-home {
+    padding-top: 28px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* —— 行业解决方案语境条：移动端去掉「典型场景」标签及其气泡 —— */
+  .industry-context .ind-ctx-scenes { display: none !important; }
+  .industry-context {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* —— 案例 / 行业卡片：移动端每张卡片只保留一个能力气泡 —— */
+  .tcard-caps .tcard-cap:nth-of-type(n + 2) { display: none !important; }
+}
+
+/* —— 行业解决方案 / 案例顶部 Banner：窄屏收紧排版、左对齐，
+   避免大内边距导致内容像被「居中悬浮」 —— */
+@media (max-width: 960px) {
+  .page-cases .page-head,
+  .page-industries .page-head {
+    padding: 24px 20px !important;
+    text-align: left !important;
+  }
+  .page-cases .page-head-tag,
+  .page-industries .page-head-tag {
+    margin-bottom: 8px !important;
+  }
+  .page-cases .page-head-title,
+  .page-industries .page-head-title {
+    font-size: 24px !important;
+    margin-bottom: 8px !important;
+    line-height: 1.25 !important;
+  }
+  .page-cases .page-head-desc,
+  .page-industries .page-head-desc {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ================================================================
    TRY ADP 重做：任务 → Agent 执行轨迹时间线
    ================================================================ */
 .adp-try {
@@ -3418,8 +3466,8 @@ body.is-mobile-device .ind-icon svg { width: 26px !important; height: 26px !impo
 /* 思考过程区块（可折叠） */
 .adp-think {
   margin: 12px 0 4px;
-  border: 1px solid rgba(135, 88, 209, .26);
-  background: linear-gradient(180deg, #FAF7FF, #F4EEFE);
+  border: 1px solid rgba(0, 104, 181, .26);
+  background: linear-gradient(180deg, #F5FAFF, #EAF3FC);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -3435,18 +3483,19 @@ body.is-mobile-device .ind-icon svg { width: 26px !important; height: 26px !impo
   padding: 11px 14px;
   font: inherit;
 }
-.adp-think-ico { font-size: 15px; line-height: 1; }
+.adp-think-ico { font-size: 15px; line-height: 1; color: #0068B5; display: inline-flex; }
+.adp-think-ico svg { display: block; }
 .adp-think-title {
   flex: 1 1 auto;
   font-size: 13px;
   font-weight: 700;
-  color: #6A3FB0;
+  color: #0068B5;
 }
-.adp-think.is-done .adp-think-title { color: #8A6FB8; font-weight: 600; }
+.adp-think.is-done .adp-think-title { color: #2A6FAE; font-weight: 600; }
 .adp-think-toggle {
   flex: 0 0 auto;
   font-size: 12px;
-  color: #8758D1;
+  color: #0068B5;
   transition: transform .25s ease;
 }
 .adp-think[data-collapsed="true"] .adp-think-toggle { transform: rotate(-90deg); }
@@ -3454,7 +3503,7 @@ body.is-mobile-device .ind-icon svg { width: 26px !important; height: 26px !impo
 .adp-think:not(.is-done) .adp-think-title { animation: adpThinkPulse 1.3s infinite ease-in-out; }
 @keyframes adpThinkPulse { 0%,100% { opacity: 1; } 50% { opacity: .55; } }
 
-.adp-think-head:hover { background: rgba(135, 88, 209, .06); }
+.adp-think-head:hover { background: rgba(0, 104, 181, .06); }
 .adp-think-body {
   display: grid;
   grid-template-rows: 1fr;
@@ -3467,7 +3516,7 @@ body.is-mobile-device .ind-icon svg { width: 26px !important; height: 26px !impo
   padding: 0 14px 10px 36px;
   font-size: 13px;
   line-height: 1.7;
-  color: #5B4A78;
+  color: #3F5A78;
 }
 .adp-think .adp-trace-list { padding: 0 14px 12px 30px; }
 .adp-think[data-collapsed="true"] .adp-think-body {
@@ -3546,10 +3595,10 @@ body.is-mobile-device .ind-icon svg { width: 26px !important; height: 26px !impo
   border: 1px solid rgba(0, 104, 181, .3);
   color: #0068B5;
 }
-.adp-step-plan .adp-step-dot { background: #E9EEFF; border-color: rgba(76, 111, 255, .4); color: #4C6FFF; }
-.adp-step-rag .adp-step-dot { background: #E6F6EE; border-color: rgba(22, 163, 95, .4); color: #16A35F; }
-.adp-step-tool .adp-step-dot { background: #FFF1E6; border-color: rgba(214, 122, 33, .4); color: #D67A21; }
-.adp-step-rule .adp-step-dot { background: #F3EAFE; border-color: rgba(135, 88, 209, .4); color: #8758D1; }
+.adp-step-plan .adp-step-dot { background: #E6F2FF; border-color: rgba(0, 104, 181, .4); color: #0068B5; }
+.adp-step-rag .adp-step-dot { background: #EAF4FF; border-color: rgba(0, 104, 181, .4); color: #0068B5; }
+.adp-step-tool .adp-step-dot { background: #EAF4FF; border-color: rgba(0, 104, 181, .4); color: #0068B5; }
+.adp-step-rule .adp-step-dot { background: #EAF4FF; border-color: rgba(0, 104, 181, .4); color: #0068B5; }
 .adp-step-deliver .adp-step-dot { background: #E6F2FF; border-color: rgba(0, 104, 181, .45); color: #0068B5; }
 
 .adp-step-top {
@@ -3568,9 +3617,9 @@ body.is-mobile-device .ind-icon svg { width: 26px !important; height: 26px !impo
   border-radius: 5px;
   padding: 2px 7px;
 }
-.adp-step-rag .adp-step-kind { color: #16A35F; background: rgba(22, 163, 95, .08); border-color: rgba(22, 163, 95, .24); }
-.adp-step-tool .adp-step-kind { color: #D67A21; background: rgba(214, 122, 33, .08); border-color: rgba(214, 122, 33, .26); }
-.adp-step-rule .adp-step-kind { color: #8758D1; background: rgba(135, 88, 209, .08); border-color: rgba(135, 88, 209, .24); }
+.adp-step-rag .adp-step-kind { color: #0068B5; background: rgba(0, 104, 181, .08); border-color: rgba(0, 104, 181, .24); }
+.adp-step-tool .adp-step-kind { color: #0068B5; background: rgba(0, 104, 181, .08); border-color: rgba(0, 104, 181, .26); }
+.adp-step-rule .adp-step-kind { color: #0068B5; background: rgba(0, 104, 181, .08); border-color: rgba(0, 104, 181, .24); }
 .adp-step-top b { font-size: 14px; font-weight: 700; color: #1E3A5F; }
 .adp-step-main p { margin: 0; font-size: 13.5px; line-height: 1.6; color: #46688A; }
 
